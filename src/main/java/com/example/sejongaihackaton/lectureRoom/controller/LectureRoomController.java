@@ -39,7 +39,8 @@ public class LectureRoomController {
                         device.getLabel(),
                         device.getDeviceId(),
                         device.getName(),
-                        device.getStatus()
+                        device.getStatus(),
+                        device.getLabelType()
                 ))
                 .collect(Collectors.toList());
 

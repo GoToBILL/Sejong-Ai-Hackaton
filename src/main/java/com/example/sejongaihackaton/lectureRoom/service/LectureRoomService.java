@@ -54,13 +54,15 @@ public class LectureRoomService {
                 .map(room -> new LectureRoomDto(
                         room.getRoomNumber(),
                         room.getFloor(),
+                        room.getBuilding().getName(),
                         room.getDevices().stream()
                                 .map(device -> new DeviceResponseDto(
                                         device.getId(),
                                         device.getLabel(),
                                         device.getDeviceId(),
                                         device.getName(),
-                                        device.getStatus()
+                                        device.getStatus(),
+                                        device.getLabelType()
                                 ))
                                 .collect(Collectors.toList())
                 ))
@@ -78,6 +80,7 @@ public class LectureRoomService {
                 .map(room -> new LectureRoomDto(
                         room.getRoomNumber(),
                         room.getFloor(),
+                        room.getBuilding().getName(),
                         room.getDevices().stream()
                                 .filter(device -> "on".equalsIgnoreCase(device.getStatus())) // status가 "on"인 디바이스만
                                 .map(device -> new DeviceResponseDto(
@@ -85,7 +88,8 @@ public class LectureRoomService {
                                         device.getLabel(),
                                         device.getDeviceId(),
                                         device.getName(),
-                                        device.getStatus()
+                                        device.getStatus(),
+                                        device.getLabelType()
                                 ))
                                 .collect(Collectors.toList())
                 ))

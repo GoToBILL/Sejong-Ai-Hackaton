@@ -13,5 +13,6 @@ import java.util.List;
 public class LectureRoomDto {
     private String roomNumber; // 강의실 번호
     private String floor;
+    private String buildingName;
     private List<DeviceResponseDto> devices; // 디바이스 목록
 }
