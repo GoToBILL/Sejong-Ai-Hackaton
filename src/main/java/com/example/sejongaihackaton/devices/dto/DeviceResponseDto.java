@@ -1,5 +1,6 @@
 package com.example.sejongaihackaton.devices.dto;
 
+import com.example.sejongaihackaton.devices.entity.LabelType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,4 +12,5 @@ public class DeviceResponseDto {
     private String deviceId; // 디바이스 타입
     private String name;   // 제조사 이름
     private String status; // 디바이스 상태
+    private LabelType labelType;
 }
