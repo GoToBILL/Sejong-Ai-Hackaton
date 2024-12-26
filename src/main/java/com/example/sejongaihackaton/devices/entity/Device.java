@@ -1,6 +1,7 @@
 package com.example.sejongaihackaton.devices.entity;
 
 import com.example.sejongaihackaton.lectureRoom.entity.LectureRoom;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -28,7 +29,12 @@ public class Device {
     private String roomId;
     private String status = "off";
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private LabelType labelType;
+
     @ManyToOne
     @JoinColumn(name = "lecture_room_id")
+    @JsonBackReference
     private LectureRoom lectureRoom;
 }
