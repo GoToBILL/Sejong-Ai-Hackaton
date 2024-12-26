@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class SyncConfig {
-    @Value("${smartsync.api.key}")
     private static String apiKey;
+
+    @Value("${smartsync.api.key}")
+    public void setApiKey(String key) {
+        apiKey = key;
+    }
+
 }
