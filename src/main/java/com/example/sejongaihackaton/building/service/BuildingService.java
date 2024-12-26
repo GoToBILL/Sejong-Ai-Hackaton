@@ -58,13 +58,6 @@ public class BuildingService {
                 .orElseThrow(() -> new RuntimeException("Building not found"));
         return toBuildingResponseDto(building);
     }
-
-    public String getBuildingByLectureRoom(Long lectureRoomId) {
-        LectureRoom lectureRoom = lectureRoomRepository.findById(lectureRoomId)
-                .orElseThrow(() -> new RuntimeException("LectureRoom not found"));
-        return lectureRoom.getBuilding().getName();
-    }
-
     private BuildingResponseDto toBuildingResponseDto(Building building) {
         List<LectureRoomDto> lectureRoomDtos = building.getLectureRooms().stream()
                 .map(this::toLectureRoomDto)
