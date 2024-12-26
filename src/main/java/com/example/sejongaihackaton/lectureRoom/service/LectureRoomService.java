@@ -59,7 +59,8 @@ public class LectureRoomService {
                                         device.getId(),
                                         device.getLabel(),
                                         device.getDeviceId(),
-                                        device.getName()
+                                        device.getName(),
+                                        device.getStatus()
                                 ))
                                 .collect(Collectors.toList())
                 ))
@@ -83,7 +84,8 @@ public class LectureRoomService {
                                         device.getId(),
                                         device.getLabel(),
                                         device.getDeviceId(),
-                                        device.getName()
+                                        device.getName(),
+                                        device.getStatus()
                                 ))
                                 .collect(Collectors.toList())
                 ))

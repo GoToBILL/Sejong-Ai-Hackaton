@@ -31,7 +31,8 @@ public class DeviceService {
                         device.getId(),
                         device.getLabel(),
                         device.getDeviceId(),
-                        device.getName()
+                        device.getName(),
+                        device.getStatus()
                 ))
                 .collect(Collectors.toList());
     }
@@ -44,7 +45,8 @@ public class DeviceService {
                 device.getId(),
                 device.getLabel(),
                 device.getDeviceId(),
-                device.getName()
+                device.getName(),
+                device.getStatus()
         );
     }
 
@@ -98,7 +100,8 @@ public class DeviceService {
                 device.getId(),
                 device.getLabel(),
                 device.getDeviceId(),
-                device.getName()
+                device.getName(),
+                device.getStatus()
         );
     }
 }
