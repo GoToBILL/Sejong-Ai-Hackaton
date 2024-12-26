@@ -7,11 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Getter
 public class SyncConfig {
-    private static String apiKey;
 
     @Value("${smartsync.api.key}")
-    public void setApiKey(String key) {
-        apiKey = key;
-    }
-
+    private String apiKey; // static 제거
 }
