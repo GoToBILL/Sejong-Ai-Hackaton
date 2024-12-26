@@ -4,6 +4,7 @@ import com.example.sejongaihackaton.SyncConfig;
 import com.example.sejongaihackaton.devices.dto.DeviceCommandRequest;
 import com.example.sejongaihackaton.devices.dto.DeviceResponseDto;
 import com.example.sejongaihackaton.devices.entity.Device;
+import com.example.sejongaihackaton.devices.entity.LabelType;
 import com.example.sejongaihackaton.devices.repository.DeviceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
@@ -32,7 +33,8 @@ public class DeviceService {
                         device.getLabel(),
                         device.getDeviceId(),
                         device.getName(),
-                        device.getStatus()
+                        device.getStatus(),
+                        device.getLabelType()
                 ))
                 .collect(Collectors.toList());
     }
@@ -46,7 +48,8 @@ public class DeviceService {
                 device.getLabel(),
                 device.getDeviceId(),
                 device.getName(),
-                device.getStatus()
+                device.getStatus(),
+                device.getLabelType()
         );
     }
 
@@ -88,20 +91,5 @@ public class DeviceService {
 
         // 변경 사항 저장
         deviceRepository.save(device);
-    }
-
-    public DeviceResponseDto getDeviceByLabel(String label) {
-        // 단일 디바이스 검색
-        Device device = deviceRepository.findByLabel(label)
-                .orElseThrow(() -> new NoSuchElementException("Label로 디바이스를 찾을 수 없습니다: " + label));
-
-        // Entity -> DTO 변환
-        return new DeviceResponseDto(
-                device.getId(),
-                device.getLabel(),
-                device.getDeviceId(),
-                device.getName(),
-                device.getStatus()
-        );
     }
 }
