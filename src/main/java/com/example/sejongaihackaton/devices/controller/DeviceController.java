@@ -1,22 +1,14 @@
 package com.example.sejongaihackaton.devices.controller;
 
-import com.example.sejongaihackaton.SyncConfig;
 import com.example.sejongaihackaton.devices.dto.DeviceCommandRequest;
 import com.example.sejongaihackaton.devices.dto.DeviceResponseDto;
-import com.example.sejongaihackaton.devices.entity.Device;
-import com.example.sejongaihackaton.devices.repository.DeviceRepository;
 import com.example.sejongaihackaton.devices.service.DeviceService;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor

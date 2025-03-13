@@ -1,4 +1,4 @@
-package com.example.sejongaihackaton;
+package com.example.sejongaihackaton.common.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

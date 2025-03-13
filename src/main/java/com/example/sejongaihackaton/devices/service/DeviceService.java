@@ -1,10 +1,9 @@
 package com.example.sejongaihackaton.devices.service;
 
-import com.example.sejongaihackaton.SyncConfig;
+import com.example.sejongaihackaton.common.config.SyncConfig;
 import com.example.sejongaihackaton.devices.dto.DeviceCommandRequest;
 import com.example.sejongaihackaton.devices.dto.DeviceResponseDto;
 import com.example.sejongaihackaton.devices.entity.Device;
-import com.example.sejongaihackaton.devices.entity.LabelType;
 import com.example.sejongaihackaton.devices.repository.DeviceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
